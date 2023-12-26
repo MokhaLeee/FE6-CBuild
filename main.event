@@ -1,0 +1,22 @@
+#include "EAstdlib.event"
+#include "Extensions/Hack Installation.txt"
+#include "Extensions/ProcDefinitions.txt"
+
+#include "configs.h"
+#include "include/macros.event"
+#include "include/constants.event"
+
+ORG FreeSpace
+    /* MOKHA FE6 CBUILD */
+    BYTE 0x4D 0x4F 0x4B 0x48 0x41 0x20 0x46 0x45 0x36 0x20 0x43 0x42 0x55 0x49 0x4C 0x44
+
+    #include "data/reloc.event"
+
+    /* Install after repointing */
+    #include "Tools/Tool Helpers.txt"
+
+    #include "wizardry/installer.event"
+    #include "data/installer.event"
+    #include "contants/installer.event"
+
+MESSAGE FreeSpace___Main___ end at (CURRENTOFFSET)

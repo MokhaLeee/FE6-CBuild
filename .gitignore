@@ -1,0 +1,30 @@
+.vscode/
+.cache_dir/
+*__pycache__
+install-devkitpro-pacman
+
+*.gba
+*.sym
+
+# Wizardry
+*.o
+*.d
+*.dmp
+*.lyn.event
+
+# Spritans
+*.4bpp
+*.gbapal
+*.lz
+*.img.bin
+*.map.bin
+*.pal.bin
+
+# Tables
+*.csv.event
+
+# Fonts
+*.fefont
+
+# EfxAnims
+*.efx.event

@@ -1,0 +1,14 @@
+#ifndef MACROS_EVENT_H
+#define MACROS_EVENT_H
+
+#ifndef _thumb
+#define _thumb(p) "PUSH; ORG CURRENTOFFSET+1; p:; POP"
+#endif
+
+#define LynJumpDefined
+#define LYN_JUMP(aTarget) "WORD $46C04778 $E59FC000 $E12FFF1C; POIN aTarget;"
+#define LYN_JUMP_UTIL(func, ptr) "PUSH; ORG (ptr); WORD $46C04778 $E59FC000 $E12FFF1C; POIN (func); POP; PROTECT (ptr) (ptr + 16)"
+
+#define NULL_PTR "WORD 0"
+
+#endif /* MACROS_EVENT_H */

@@ -1,0 +1,18 @@
+#ifdef CONFIG_USE_DEBUG
+
+#ifndef DEBUG_KIT_INSTALLED
+#define DEBUG_KIT_INSTALLED
+
+#ifndef GAME_INIT_HOOK
+    ERROR "Need module: GameInitHook installed!"
+#endif /* GAME_INIT_HOOK */
+
+ALIGN 4
+#include "source/mgba.lyn.event"
+#include "source/nocashgba.lyn.event"
+#include "source/debug.lyn.event"
+
+#include "tinyprintf/tinyprintf.lyn.event"
+
+#endif /* DEBUG_KIT_INSTALLED */
+#endif /* CONFIG_USE_DEBUG */
