@@ -8,6 +8,8 @@ STRING_LOCATIONS := string-locations.txt
 STRINGS_REPOINT := $(mkfile_dir)/data/fe6-strings-repoint.event
 STRINGS_SOURCES := $(mkfile_dir)/data/fe6-strings.s
 
+$(shell mkdir -p $(mkfile_dir)/data > /dev/null)
+
 all: $(STRINGS_REPOINT) $(STRINGS_SOURCES)
 .PHONY: all
 
