@@ -16,8 +16,8 @@ FontType = {
 }
 
 FontTable = {
-    GlyphType.GlyS: 0x59027C,
-    GlyphType.GlyT: 0x5A82B0,
+    GlyphType.GlyS: "GlyphType_GlyS",
+    GlyphType.GlyT: "GlyphType_GlyT",
 }
 
 def show_exception_and_exit(exc_type, exc_value, tb):
@@ -76,9 +76,14 @@ def make_installer(glyphs, type, fpath):
 
             g[unicod_lo] = character
 
+        f.write("ALIGN 4\n")
+        f.write("{}:\n".format(FontTable[type]))
+        f.write("ORG CURRENTOFFSET + 0x400\n")
+        f.write("\n")
+
         f.write("PUSH\n")
         for lo, character in g.items():
-            f.write("ORG {0} + 4 * {1}\n".format(hex(FontTable[type]), hex(lo)))
+            f.write("ORG {0} + 4 * {1}\n".format(FontTable[type], hex(lo)))
             f.write("\tPOIN Font{0}_{1}\n\n".format(type_str, "{:04X}".format(ord(character))))
 
         f.write("POP\n")

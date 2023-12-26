@@ -5,6 +5,22 @@
 
 #define CHAR_NEWLINE 0x01
 
+extern struct Glyph const * const GlyphType_GlyS[];
+extern struct Glyph const * const GlyphType_GlyT[];
+
+/* LynJump */
+void SetTextFontGlyphs(int glyphset)
+{
+    if (glyphset == TEXT_GLYPHS_SYSTEM)
+    {
+        gActiveFont->glyphs = GlyphType_GlyS;
+    }
+    else
+    {
+        gActiveFont->glyphs = GlyphType_GlyT;
+    }
+}
+
 static const struct Glyph * GetCharGlyphUnicode(u32 unicode_ch, struct Font * font)
 {
     const struct Glyph * glyph;
