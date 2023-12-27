@@ -18,7 +18,7 @@ static int GetChLenUtf8(const char * str)
     if ((0b10000000 & cod) == 0x0)
         return 1;
 
-    LogErrorf("Failed on decoding at %#X!", str);
+    LogErrorf("Failed on decoding at %#p!", str);
     return -1;
 }
 
@@ -63,41 +63,9 @@ int DecodeUtf8(const char * str, u32 * unicode_out, int * len)
 
     default:
 
-        LogErrorf("Failed on decoding at %#X!", str);
+        LogErrorf("Failed on decoding at %#p!", str);
         *unicode_out = 0;
         *len = 0;
         return -1;
-    }
-}
-
-/* Unicode ===> UTF8 */
-int EncodeUtf8(u32 unicod, char * out, int * len)
-{
-    switch (unicod) {
-    case 0x00 ... 0x7F:
-        out[0] = unicod;
-        *len = 1;
-        return 0;
-
-    case 0x80 ... 0x7FF:
-        out[0] = 0xC0 + ((unicod) >> 6);
-        out[1] = 0x80 + ((unicod) & 0x3F);
-        *len = 2;
-        return 0;
-
-    case 0x800 ... 0xFFFF:
-        out[0] = 0xE0 + ((unicod >> 12));
-        out[1] = 0x80 + ((unicod >> 6) & 0x3F);
-        out[2] = 0x80 + ((unicod) & 0x3F);
-        *len = 3;
-        return 0;
-
-    default:
-        out[0] = 0xF0 + ((unicod >> 18));
-        out[1] = 0x80 + ((unicod >> 12) & 0x3F);
-        out[2] = 0x80 + ((unicod >> 6) & 0x3F);
-        out[3] = 0x80 + ((unicod) & 0x3F);
-        *len = 4;
-        return 0;
     }
 }
