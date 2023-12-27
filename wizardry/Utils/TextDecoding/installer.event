@@ -7,7 +7,3 @@
 
 #include "Source/LynJump.event"
 
-#include "HardcodedString/installer.event"
-
-#include "MiscFix/fe6-strings-fixes.event"
-#include "MiscFix/fe6-strings-english-fixes.event"

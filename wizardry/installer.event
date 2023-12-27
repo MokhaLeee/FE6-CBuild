@@ -1,5 +1,6 @@
 #include "Utils/GameInitHook/installer.event"
 #include "Utils/DebugKit/installer.event"
 #include "Utils/TextDecoding/installer.event"
+#include "Utils/HardcodedString/installer.event"
 
 #include "Common/Fixes/skip-intro.event"

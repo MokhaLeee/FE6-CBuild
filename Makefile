@@ -204,7 +204,7 @@ CLEAN_BUILD += $(FONT_DIR)
 # = Hard-coded string =
 # =====================
 
-HARD_COD_DIR := $(PWD)/wizardry/Utils/TextDecoding/HardcodedString
+HARD_COD_DIR := $(PWD)/wizardry/Utils/HardcodedString
 
 STRING_LOCATIONS := $(HARD_COD_DIR)/string-locations.txt
 STRINGS_REPOINT := $(HARD_COD_DIR)/data/fe6-strings-repoint.event

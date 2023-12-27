@@ -1,9 +1,9 @@
 mkfile_path := $(abspath $(lastword $(MAKEFILE_LIST)))
 mkfile_dir := $(dir $(mkfile_path))
 
-FE6_GBA ?= ../../../../fe6.gba
+FE6_GBA ?= ../../../fe6.gba
 
-STRING_LOCATIONS := string-locations.txt
+STRING_LOCATIONS := $(mkfile_dir)/string-locations.txt
 
 STRINGS_REPOINT := $(mkfile_dir)/data/fe6-strings-repoint.event
 STRINGS_SOURCES := $(mkfile_dir)/data/fe6-strings.s
