@@ -1,0 +1,15 @@
+#ifndef ICON_DISPLAY
+#define ICON_DISPLAY
+
+#include "Source/icon_rework.lyn.event"
+#include "Source/usr_disp.lyn.event"
+#include "Source/LynJump.event"
+
+ALIGN 4
+IconGetters:
+    POIN GetVanillaIconGfx    // Sheet #0, vanilla
+    ORG (IconGetters + 4 * ICON_SHEET_COUNT)
+
+#define InjectIconSheet(aSheetIndex, aIconGetterFunc) "PUSH; ORG IconGetters + 4 * (aSheetIndex); POIN (aIconGetterFunc); POP"
+
+#endif // ICON_DISPLAY
