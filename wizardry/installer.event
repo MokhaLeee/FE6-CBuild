@@ -5,4 +5,4 @@
 #include "Utils/HardcodedString/installer.event"
 #include "Utils/IconDisplay/installer.event"
 
-#include "Common/Fixes/skip-intro.event"
+#include "QOL/GameIntrofx/installer.event"
