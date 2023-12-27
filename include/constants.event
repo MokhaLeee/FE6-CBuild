@@ -1,4 +1,6 @@
 #ifndef CONSTANTS_EVENT_H
 #define CONSTANTS_EVENT_H
 
+#include "constants/sounds.h"
+
 #endif /* CONSTANTS_EVENT_H */

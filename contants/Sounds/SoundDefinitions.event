@@ -1,0 +1,19 @@
+#ifndef SOUND_DEFINITIONS
+#define SOUND_DEFINITIONS
+
+// Song group definitions (constants)
+
+#define SG_BATTLE_MUSIC 0
+#define SG_MAP_MUSIC    1
+#define SG_SFX          6
+
+// Song id definitions
+
+#define SONG_MainTheme 0x1
+#define SONG_EnemiesAppear 0x2
+#define SONG_WindAcrossThePlain 0xA
+#define SONG_Attack 0x48
+#define SONG_Revenge 0x49
+#define SONG_ChapterOpen 0x91
+
+#endif // SOUND_DEFINITIONS

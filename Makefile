@@ -86,8 +86,6 @@ GAMEDATA_DIR := $(PWD)/data
 CLEAN_DIRS += $(WIZARDRY_DIR) $(CONTANTS_DIR) $(GAMEDATA_DIR)
 
 CONTANTS_DIR := $(PWD)/contants
-TEXT_DIR     := $(CONTANTS_DIR)/Texts
-FONT_DIR 	 := $(CONTANTS_DIR)/Fonts
 
 include contants/contants.mk
 
@@ -181,25 +179,6 @@ CLEAN_TARGET += $(TSA_FILES:.tsa=.tsa.lz)
 
 CLEAN_TARGET += $(PNG_FILES:.png=.img.bin) $(PNG_FILES:.png=.map.bin) $(PNG_FILES:.png=.pal.bin)
 
-# =========
-# = Glyph =
-# =========
-
-GLYPH_INSTALLER := $(FONT_DIR)/GlyphInstaller.event
-GLYPH_DEPS := $(FONT_DIR)/FontList.txt
-
-font: $(GLYPH_INSTALLER)
-
-$(GLYPH_INSTALLER): $(GLYPH_DEPS)
-	@$(MAKE) -C $(FONT_DIR)
-
-%_font.img.bin: %_font.png
-	@echo "[GEN]	$@"
-	@$(GRIT) $< -gB2 -p! -tw16 -th16 -ftb -fh! -o $@
-
-PRE_BUILD += font
-CLEAN_BUILD += $(FONT_DIR)
-
 # =====================
 # = Hard-coded string =
 # =====================
@@ -218,26 +197,6 @@ $(STRINGS_REPOINT): $(STRING_LOCATIONS)
 
 PRE_BUILD += hard_cod
 CLEAN_BUILD += $(HARD_COD_DIR)
-
-# =========
-# = Texts =
-# =========
-
-TEXT_MAIN   := $(TEXT_DIR)/Source/TextMain.txt
-TEXT_SOURCE := $(shell find $(TEXT_DIR) -type f -name '*.txt')
-
-export TEXT_DEF := $(TEXT_DIR)/TextDefinitions.h
-
-text: $(TEXT_DEF)
-
-$(TEXT_DEF): $(TEXT_MAIN) $(TEXT_SOURCE)
-	@$(MAKE) -C $(TEXT_DIR)
-
-%.fetxt.dmp: %.fetxt
-	@$(MAKE) -f $(TEXT_DIR)/makefile $@
-
-PRE_BUILD += text
-CLEAN_BUILD += $(TEXT_DIR)
 
 # ==============
 # = PRE-BUILD ==
