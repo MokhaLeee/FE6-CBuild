@@ -4,5 +4,6 @@
 #include "Utils/TextDecoding/installer.event"
 #include "Utils/HardcodedString/installer.event"
 #include "Utils/IconDisplay/installer.event"
+#include "Utils/Verify/installer.event"
 
 #include "QOL/GameIntrofx/installer.event"
