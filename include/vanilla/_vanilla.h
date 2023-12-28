@@ -3,6 +3,7 @@
 #include "common.h"
 #include "proc.h"
 #include "gamecontroller.h"
+#include "statscreen.h"
 
 /* gamecontroller.c */
 struct GameController
@@ -48,3 +49,52 @@ extern void (* MapFloodCoreRamFunc)(void);
 extern u8 const * const gMsgTable[];
 extern char sMsgString[0x1000];
 extern int sActiveMsg;
+
+/* statscreen.c */
+extern struct StatScreenTextInfo const gStatScreenPersonalInfoLabelsInfo[];
+
+/* movepath.c */
+enum { MOVEPATH_MAX = 20 };
+
+enum
+{
+    MOVEPATH_DIR_NONE,
+    MOVEPATH_DIR_RIGHT,
+    MOVEPATH_DIR_DOWN,
+    MOVEPATH_DIR_LEFT,
+    MOVEPATH_DIR_UP,
+};
+
+struct MovePath
+{
+#if !BUGFIX
+    // This is just unused/padding, but a proc header happen to fit here perfectly
+    /* 00 */ PROC_HEADER;
+#endif
+
+    /* 29 */ i8 xLast;
+    /* 2A */ i8 yLast;
+    /* 2B */ u8 initMove;
+    /* 2C */ i8 path;
+    /* 2D */ i8 x[MOVEPATH_MAX];
+    /* 41 */ i8 y[MOVEPATH_MAX];
+    /* 55 */ i8 move[MOVEPATH_MAX];
+};
+
+void SetMovePathLastCursorPosition(u16 x, u16 y);
+void CutMovePath(i8 path);
+void AddMovePathSquare(i8 x, i8 y);
+int FindMovePathSquare(i8 x, i8 y);
+void MovePathFloodFromTail(void);
+void RebuildMovePath(void);
+bool MovePathIsValid(void);
+void UpdateMovePath(void);
+u8 GetMovePathDirFrom(u8 path);
+u8 GetMovePathDirTo(u8 path);
+bool ShouldDrawMovePathBitAt(short x, short y, u8 xEdge, u8 yEdge);
+void DrawMovePath(void);
+
+extern struct MovePath * CONST_DATA gMovePath;
+
+/* code_0802B814.c */
+int func_fe6_0802B99C(void);

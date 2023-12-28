@@ -1,0 +1,60 @@
+#include "Source/mhp.lyn.event"
+#include "Source/str.lyn.event"
+#include "Source/mag.lyn.event"
+#include "Source/skl.lyn.event"
+#include "Source/spd.lyn.event"
+#include "Source/luk.lyn.event"
+#include "Source/def.lyn.event"
+#include "Source/res.lyn.event"
+#include "Source/mov.lyn.event"
+#include "Source/con.lyn.event"
+
+#include "Source/InjectConGetter.lyn.event"
+#include "Source/InjectMovGetter.lyn.event"
+
+#include "Source/LynJump.event"
+
+PUSH
+    ORG 0x0183c8
+    _thumb(MhpGetter)
+        jumpToHack(MSG_MHP)
+
+    ORG 0x0183e8
+    _thumb(StrGetter)
+        jumpToHack(MSG_POW)
+
+    /* Fall through */
+
+    _thumb(MagGetter)
+        jumpToHack(MSG_MAG)
+
+    ORG 0x018408
+    _thumb(SklGetter)
+        jumpToHack(MSG_SKL)
+
+    ORG 0x018448
+    _thumb(SpdGetter)
+        jumpToHack(MSG_SPD)
+
+    ORG 0x0184d0
+    _thumb(LukGetter)
+        jumpToHack(MSG_LUK)
+
+    ORG 0x018488
+    _thumb(DefGetter)
+        jumpToHack(MSG_DEF)
+
+    ORG 0x0184a8
+    _thumb(ResGetter)
+        jumpToHack(MSG_RES)
+
+    /* Fall through */
+
+    _thumb(MovGetter)
+        jumpToHack(MSG_MOV)
+
+    /* Fall through */
+
+    _thumb(ConGetter)
+        jumpToHack(MSG_CON)
+POP

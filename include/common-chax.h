@@ -2,6 +2,8 @@
 
 #include "common.h"
 
+#define CHAX 1
+
 #include "../configs.h"
 #include "vanilla/_vanilla.h"
 

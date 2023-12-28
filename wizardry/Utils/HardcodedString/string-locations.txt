@@ -148,8 +148,8 @@
 08319890 System_Unk_88
 08319884 System_Unk_89
 
-083195AC PrepScreen_Label_Magic "Mag"
-083195B4 PrepScreen_Label_Strength
+# 083195AC PrepScreen_Label_Magic "Mag"
+# 083195B4 PrepScreen_Label_Strength
 
 08319894 PrepScreen_ItemHelp_Label_Range "Rng"
 0831989C PrepScreen_ItemHelp_Label_Weight "Wt"
@@ -298,7 +298,7 @@
 # unit panel labels
 08105D58 UnitPanel_Label_Hp
 08105D60 UnitPanel_Label_HpSep
-08105D64 UnitPanel_Label_Con
+# 08105D64 UnitPanel_Label_Con
 08105D6C UnitPanel_Label_Aid
 08105D74 UnitPanel_Label_Status
 08105D7C UnitPanel_Label_Res

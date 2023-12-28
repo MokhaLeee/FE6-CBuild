@@ -1,0 +1,59 @@
+ALIGN 4
+MhpGetters:
+    POIN MhpGetter_ItemBonus
+    /* Terminator */
+    POIN StatusGetterMinusZero
+    WORD 0
+
+StrGetters:
+    POIN StrGetter_ItemBonus
+    /* Terminator */
+    POIN StatusGetterMinusZero
+    WORD 0
+
+MagGetters:
+    WORD 0
+
+SklGetters:
+    POIN SklGetter_RescuingDebuff
+    POIN SklGetter_ItemBonus
+    /* Terminator */
+    POIN StatusGetterMinusZero
+    WORD 0
+
+SpdGetters:
+    POIN SklGetter_RescuingDebuff
+    POIN SpdGetter_ItemBonus
+    /* Terminator */
+    POIN StatusGetterMinusZero
+    WORD 0
+
+LukGetters:
+    POIN LukGetter_ItemBonus
+    /* Terminator */
+    POIN StatusGetterMinusZero
+    WORD 0
+
+DefGetters:
+    POIN DefGetter_ItemBonus
+    /* Terminator */
+    POIN StatusGetterMinusZero
+    WORD 0
+
+ResGetters:
+    POIN ResGetter_ItemBonus
+    /* Terminator */
+    POIN StatusGetterMinusZero
+    WORD 0
+
+MovGetters:
+    /* Terminator */
+    POIN StatusGetterMinusZero
+    WORD 0
+
+ConGetters:
+    /* Terminator */
+    POIN StatusGetterMinusZero
+    WORD 0
+
+#include "MsgInternal.event"
