@@ -6,9 +6,10 @@ Project aims to build hacks based on [FireEmblem6](https://github.com/StanHash/f
 
 ## Progress
 
-- [x] **debug kit**
-- [x] **utf8 decoding**
-    - Support en & zh & jp characters
+- [x] [**debug kit**](wizardry/Utils/DebugKit/installer.event)
+- [x] [**utf8 decoding**](wizardry/Utils/TextDecoding/installer.event)
+    - Support **en**, **zh**, **jp** characters
+- [x] [**Sounds**](contants/Sounds/installer.event)
 
 ## Custom build
 
