@@ -2,7 +2,18 @@
 
 #include "common-chax.h"
 #include "unit.h"
-#include "item.h"
 
-bool CheckCRC_CHAX(struct Unit * unit, u32 crc);
-void WriteCRC_CHAX(struct Unit * unit, u32 * crc);
+struct ChaxUnitListHeader {
+    i8 uid;
+    u8 pid, jid;
+    u8 level;
+    u8 weapon;
+
+    u8 _pad_[3];
+};
+
+bool CheckHeader_CHAX(struct ChaxUnitListHeader * header, struct Unit * unit);
+void WriteHeader_CHAX(struct ChaxUnitListHeader * header, struct Unit * unit);
+
+bool CheckCRC_CHAX(void const * data, int size, u32 crc);
+void WriteCRC_CHAX(void const * data, int size, u32 * crc);

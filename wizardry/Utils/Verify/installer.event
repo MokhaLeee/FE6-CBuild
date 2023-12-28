@@ -1,6 +1,7 @@
 #ifndef VERIFY_CHAX_INSTALLED
 #define VERIFY_CHAX_INSTALLED
 
-#include "Source/verification.lyn.event"
+#include "Source/crc.lyn.event"
+#include "Source/unit-list.lyn.event"
 
 #endif
