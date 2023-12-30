@@ -1,0 +1,6 @@
+EventPointerTable(0xD, SkipIntro)
+
+ALIGN 4
+SkipIntro: //just point all of them here, they're the same
+    EndWorldMap
+    ENDA

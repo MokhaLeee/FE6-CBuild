@@ -1,3 +1,4 @@
 #include "Texts/installer.event"
 #include "Fonts/installer.event"
 #include "Sounds/installer.event"
+#include "Events/installer.event"

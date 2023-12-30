@@ -1,0 +1,7 @@
+GetItemMinRange
+GetItemMaxRange
+
+GetItemReach
+GetUnitStaffReach
+GetUnitItemUseReach
+GetUnitWeaponReach

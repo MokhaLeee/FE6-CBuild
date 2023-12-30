@@ -1,6 +1,7 @@
 /* Need installed first because it has some hooks or dependence */
 #include "Common/GameInitHook/installer.event"
 #include "Core/StatusGetter/installer.event"
+#include "Core/WeaponRange/installer.event"
 
 #include "Utils/DebugKit/installer.event"
 #include "Utils/TextDecoding/installer.event"

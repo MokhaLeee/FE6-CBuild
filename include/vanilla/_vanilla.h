@@ -2,6 +2,7 @@
 
 #include "common.h"
 #include "proc.h"
+#include "item.h"
 #include "gamecontroller.h"
 #include "statscreen.h"
 
@@ -98,3 +99,6 @@ extern struct MovePath * CONST_DATA gMovePath;
 
 /* code_0802B814.c */
 int func_fe6_0802B99C(void);
+
+/* item.c */
+struct IInfo const * GetIInfo(int iid);

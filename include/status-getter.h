@@ -9,10 +9,12 @@ extern const msg_func MhpGetters[], StrGetters[], MagGetters[], SklGetters[], \
 
 static inline int msg_calc(int status, struct Unit * unit, const msg_func * getters)
 {
-    const msg_func * it = getters;
-    while (*it)
-        status = (*it++)(status, unit);
-
+    if (getters)
+    {
+        const msg_func * it = getters;
+        while (*it)
+            status = (*it++)(status, unit);
+    }
     return status;
 }
 

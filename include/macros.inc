@@ -47,6 +47,14 @@
     pop {\reg}
 .endm
 
+.macro blh_safe to,reg=r4
+    push {\reg}
+    ldr \reg,=\to
+    mov r14,\reg
+    .short 0xF800
+    pop {\reg}
+.endm
+
 .macro fun value, name
     .global \name
     .type \name, function

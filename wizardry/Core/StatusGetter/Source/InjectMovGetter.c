@@ -27,6 +27,7 @@
 #include "constants/terrains.h"
 
 #include "status-getter.h"
+#include "weapon-range.h"
 
 bool CanActiveUnitStillMove(void)
 {
@@ -599,7 +600,7 @@ bool AiCouldReachByBirdsEyeDistance(struct Unit * unit, struct Unit * other, u16
     int maxDistance = RECT_DISTANCE(unit->x, unit->y, other->x, other->y);
 
 #ifdef CHAX
-    if (maxDistance <= MovGetter(unit) + MovGetter(other) + GetItemMaxRange(item))
+    if (maxDistance <= MovGetter(unit) + MovGetter(other) + NewGetItemMaxRange(item, unit))
 #else
     if (maxDistance <= UNIT_MOV(unit) + UNIT_MOV(other) + GetItemMaxRange(item))
 #endif
@@ -615,7 +616,7 @@ bool AiReachesByBirdsEyeDistance(struct Unit * unit, struct Unit * other, u16 it
 #ifdef CHAX
     if (maxDistance <= UNIT_MOV(unit) + GetItemMaxRange(item))
 #else
-    if (maxDistance <= MovGetter(unit) + GetItemMaxRange(item))
+    if (maxDistance <= MovGetter(unit) + NewGetItemMaxRange(item, unit))
 #endif
         return TRUE;
 

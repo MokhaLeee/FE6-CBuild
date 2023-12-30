@@ -1,6 +1,5 @@
 TEXT_DIR  := $(CONTANTS_DIR)/Texts
 FONT_DIR  := $(CONTANTS_DIR)/Fonts
-SOUND_DIR := $(CONTANTS_DIR)/Sounds
 
 # =========
 # = Texts =
@@ -41,8 +40,9 @@ $(GLYPH_INSTALLER): $(GLYPH_DEPS)
 PRE_BUILD += font
 CLEAN_BUILD += $(FONT_DIR)
 
-# ==========
-# = Sounds =
-# ==========
+# ========
+# = Misc =
+# ========
 
-CLEAN_DIRS += $(SOUND_DIR)
+CLEAN_DIRS += $(CONTANTS_DIR)/Sounds
+CLEAN_DIRS += $(CONTANTS_DIR)/Events
